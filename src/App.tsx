@@ -1,4 +1,4 @@
-import { AppBar, Box, Drawer, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Drawer, Toolbar } from "@mui/material";
 import "./App.css";
 import hero from "./assets/hero.jpg";
 
@@ -16,10 +16,7 @@ function App() {
         enableColorOnDark
       >
         <Toolbar>
-          <Typography variant="h6" noWrap component="div">
-            {" "}
-            Logo
-          </Typography>
+          <img src="../src/assets/logo-white-horizontal.svg" height={40} />
 
           {/* <Box>
             <Avatar sx={{ bgcolor: "secondary" }}>N</Avatar>
@@ -28,7 +25,7 @@ function App() {
       </AppBar>
       <Box
         sx={{
-          height: "59rem",
+          height: "100vh",
           width: "100vw",
           backgroundImage: `linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0) 100%),url(${hero})`,
           backgroundSize: "contain",
