@@ -57,19 +57,24 @@ export const SearchDrawerContent = () => {
   };
 
   const FetchArtists = async () => {
-    const url = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${artistName}`;
-    const options = {
-      method: "GET",
-      headers: {
-        "x-rapidapi-key": "06e4fafe1dmsh77eec2f8841d9c3p1b1f27jsn8108f0b752ed",
-        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-      },
-    };
+    // const url = `https://deezerdevs-deezer.p.rapidapi.com/search?q=artist:${artistName}`;
+    // // const url = `https://deezerdevs-deezer.p.rapidapi.com/artist/27/top`;
+    // const url = `https://api.deezer.com/search/artist?q=${artistName}`;
+    // const options = {
+    //   method: "GET",
+    //   headers: {
+    //     "x-rapidapi-key": "06e4fafe1dmsh77eec2f8841d9c3p1b1f27jsn8108f0b752ed",
+    //     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+    //   },
+    // };
     try {
-      const response = await fetch(url, options);
+      const response = await fetch(
+        `https://api.deezer.com/search/artist?q=${artistName}`
+      );
       const result = await response.json();
       setResultData(result.data);
       console.log(result);
+      console.log(resultData);
     } catch (error) {
       console.error(error);
     }

@@ -28,7 +28,7 @@ export const ArtistContext = createContext(null);
 //   children?: React.ReactNode;
 // };
 
-export const ArtistContextProvider = (children) => {
+export const ArtistContextProvider = (children: any) => {
   //   const [artistInfo, setArtistInfo] = useState({
   //     smallImgUrl: "",
   //     bigImgUrl: "string",
