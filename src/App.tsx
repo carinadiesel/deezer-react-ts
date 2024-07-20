@@ -1,6 +1,7 @@
-import { AppBar, Box, Drawer, Toolbar } from "@mui/material";
+import { AppBar, Avatar, Box, Drawer, Toolbar } from "@mui/material";
 import "./App.css";
 import hero from "./assets/hero.jpg";
+import { SearchDrawerContent } from "./components/SearchDrawerContent";
 
 function App() {
   return (
@@ -10,17 +11,18 @@ function App() {
         color="primary"
         sx={{
           zIndex: (theme) => theme.zIndex.drawer + 1,
-          display: "flex",
-          justifyContent: "space-between",
+          paddingX: "2rem",
         }}
         enableColorOnDark
       >
-        <Toolbar>
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
           <img src="../src/assets/logo-white-horizontal.svg" height={40} />
-
-          {/* <Box>
-            <Avatar sx={{ bgcolor: "secondary" }}>N</Avatar>
-          </Box> */}
+          <Avatar sx={{ bgcolor: "lightblue" }}>U</Avatar>
         </Toolbar>
       </AppBar>
       <Box
@@ -37,13 +39,23 @@ function App() {
         <Drawer
           variant="permanent"
           sx={{
-            width: 500,
+            width: "35vw",
             flexShrink: 0,
-            [`& .MuiDrawer-paper`]: { width: 500, boxSizing: "border-box" },
+            [`& .MuiDrawer-paper`]: { width: "35vw", boxSizing: "border-box" },
           }}
         >
           <Toolbar />
-          <Box sx={{ overflow: "auto" }}></Box>
+          <Box
+            sx={{
+              overflow: "auto",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "start",
+              padding: 5,
+            }}
+          >
+            <SearchDrawerContent />
+          </Box>
         </Drawer>
       </Box>
     </Box>
