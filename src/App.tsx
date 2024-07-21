@@ -39,7 +39,7 @@ function App() {
         <Drawer
           variant="permanent"
           sx={{
-            width: "35vw",
+            width: "60vw",
             flexShrink: 0,
             [`& .MuiDrawer-paper`]: { width: "35vw", boxSizing: "border-box" },
           }}

@@ -7,40 +7,35 @@ import { createContext, useContext, useState } from "react";
 //   fanCount: number;
 // };
 
-// export type ArtistContext = {
-//   artists: [];
-//   //   topFive?: any;
-//   //   albumList: [];
+// export type ArtistContextType = {
+//   artistInfo: any;
+//   setArtistInfo: any;
 // };
 
-// type ForecastContextType = {
-//     weatherNow: Forecast[];
-//     setWeatherNow: any;
-//     lat?: Number | null;
-//     lon?: Number | null;
-//     setLon: any;
-//     setLat: any;
-//   };
+export type ArtistInfo = {
+  smallImgUrl: string;
+  bigImgUrl: string;
+  name: string;
+  fanCount: number;
+};
 
-export const ArtistContext = createContext(null);
+export type ArtistContextType = {
+  artistInfo: ArtistInfo | null;
+  setArtistInfo: React.Dispatch<React.SetStateAction<ArtistInfo | null>>;
+};
 
-// type Props = {
-//   children?: React.ReactNode;
-// };
+export const ArtistContext = createContext<ArtistContextType | null>(null);
 
-export const ArtistContextProvider = (children: any) => {
-  //   const [artistInfo, setArtistInfo] = useState({
-  //     smallImgUrl: "",
-  //     bigImgUrl: "string",
-  //     name: "string",
-  //     fanCount: 0,
-  //   });
+type Props = {
+  children?: React.ReactNode;
+};
 
-  const [artistInfo, setArtistInfo] = useState([]);
+export const ArtistContextProvider = ({ children }: Props) => {
+  const [artistInfo, setArtistInfo] = useState<ArtistInfo | null>(null);
   return (
-    <ArtistContextProvider value={{ artistInfo, setArtistInfo }}>
+    <ArtistContext.Provider value={{ artistInfo, setArtistInfo }}>
       {children}
-    </ArtistContextProvider>
+    </ArtistContext.Provider>
   );
 };
 
@@ -48,8 +43,27 @@ export const useArtistContext = () => {
   const context = useContext(ArtistContext);
   if (context === null) {
     throw new Error(
-      "useArtistContext must be used within the useArtistContextProvider"
+      "useArtistContext must be used within the ArtistContextProvider"
     );
   }
   return context;
 };
+
+// export const ArtistContextProvider = ({ children }: Props) => {
+//   const [artistInfo, setArtistInfo] = useState(null);
+//   return (
+//     <ArtistContext.Provider value={{ artistInfo, setArtistInfo }}>
+//       {children}
+//     </ArtistContext.Provider>
+//   );
+// };
+
+// export const useArtistContext = () => {
+//   const context = useContext(ArtistContext);
+//   if (context === null) {
+//     throw new Error(
+//       "useArtistContext must be used within the useArtistContextProvider"
+//     );
+//   }
+//   return context;
+// };

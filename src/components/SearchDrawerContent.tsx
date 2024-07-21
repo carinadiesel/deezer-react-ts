@@ -1,8 +1,10 @@
 import SearchIcon from "@mui/icons-material/Search";
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Divider, Link, Stack, Typography } from "@mui/material";
 import InputBase from "@mui/material/InputBase";
 import { alpha, styled } from "@mui/material/styles";
 import { useState } from "react";
+import { useArtistContext } from "../context/ArtistContext.tsx";
+import ArtistCard from "./ArtistCard.tsx";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -45,6 +47,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export const SearchDrawerContent = () => {
   const [artistName, setArtistName] = useState("");
   const [resultData, setResultData] = useState([]);
+  const { artistInfo, setArtistInfo } = useArtistContext();
 
   const handleSubmit = (event: React.SyntheticEvent) => {
     // console.log("handleSubmit ran");
@@ -79,9 +82,9 @@ export const SearchDrawerContent = () => {
       console.error(error);
     }
   };
-
+  console.log(artistInfo);
   return (
-    <Stack width={"100%"} gap={3}>
+    <Stack width={"100%"} gap={3} height={"100%"}>
       <Typography variant="h3" textAlign="center">
         Search by artist
       </Typography>
@@ -103,6 +106,28 @@ export const SearchDrawerContent = () => {
           </Button>
         </Box>
       </form>
+      <Divider sx={{ paddingTop: 1 }} />
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          rowGap: 5,
+          justifyContent: "space-evenly",
+          paddingTop: 3,
+          paddingBottom: 7,
+        }}
+      >
+        {resultData?.map((artist: any, index) => (
+          <Link key={index} onClick={() => setArtistInfo(artist)}>
+            <ArtistCard
+              name={artist.name}
+              fansCount={artist.nb_fan}
+              imgUrl={artist.picture_medium}
+              // clickEventHandler={() => setArtistInfo(artist)}
+            />
+          </Link>
+        ))}
+      </Box>
     </Stack>
   );
 };
