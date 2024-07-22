@@ -3,9 +3,9 @@ import { Box, Button, Divider, Link, Stack, Typography } from "@mui/material";
 import InputBase from "@mui/material/InputBase";
 import { alpha, styled } from "@mui/material/styles";
 import { useState } from "react";
+import type { ArtistInfo } from "../context/ArtistContext.tsx";
 import { useArtistContext } from "../context/ArtistContext.tsx";
 import ArtistCard from "./ArtistCard.tsx";
-import type { ArtistInfo } from "../context/ArtistContext.tsx";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -97,7 +97,14 @@ export const SearchDrawerContent = () => {
           <Link
             key={index}
             onClick={() => setArtistInfo(artist)}
-            sx={{ cursor: "pointer" }}
+            sx={{
+              cursor: "pointer",
+              "&:hover": {
+                border: 2,
+                borderColor: "primary",
+                borderRadius: "1rem",
+              },
+            }}
             underline="hover"
           >
             <ArtistCard

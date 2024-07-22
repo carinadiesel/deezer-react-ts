@@ -79,7 +79,6 @@ export default function ArtistInfo() {
           margin: "auto",
           padding: 2,
           borderRadius: theme.spacing(2), // 16px
-          transition: "0.3s",
           boxShadow: "0px 14px 80px rgba(34, 35, 58, 0.2)",
           position: "relative",
           overflow: "initial",
@@ -122,7 +121,6 @@ export default function ArtistInfo() {
               }}
             >
               <Box>
-                {" "}
                 <Typography variant="h4" color={"primary"}>
                   {artistInfo?.nb_album}
                 </Typography>
@@ -153,7 +151,7 @@ export default function ArtistInfo() {
           value={value}
           onChange={handleChange}
           textColor="primary"
-          indicatorColor="secondary"
+          indicatorColor="primary"
           aria-label="secondary tabs example"
         >
           <Tab label="Top Tracks" />
