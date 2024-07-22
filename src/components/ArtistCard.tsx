@@ -4,11 +4,12 @@ import { CSSObject, styled } from "@mui/material/styles";
 import { Info, InfoSlotStyles, InfoSubtitle, InfoTitle } from "./info-basic";
 
 type ArtistCardProps = {
-  name: "string";
+  name: string;
   fansCount: number;
   imgUrl: string;
 };
 
+// Basics of card sourced from MUI Treasury https://mui-treasury.com/?path=/story/card-galaxy--galaxy
 const useStyles = (): CSSObject & Partial<InfoSlotStyles> => {
   return {
     eyebrow: {

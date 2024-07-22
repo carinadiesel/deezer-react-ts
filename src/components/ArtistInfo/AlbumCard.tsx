@@ -20,9 +20,7 @@ export default function AlbumCard({ img, title }: AlbumCardProps) {
           borderColor: "gray",
         }}
       >
-        {/* <Box > */}
         <img src={img} height="60px" />
-        {/* </Box> */}
         <Typography
           sx={{
             maxWidth: "250px",

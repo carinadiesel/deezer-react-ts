@@ -2,7 +2,8 @@ import { createContext, useContext, useState } from "react";
 
 export type ArtistInfo = {
   id: number;
-  smallImgUrl: string;
+  picture_small: string;
+  picture_medium: string;
   picture_xl: string;
   name: string;
   nb_fan: number;

@@ -31,6 +31,7 @@ export default function ArtistInfo() {
     setValue(newValue);
   };
 
+  // useEffect so rerendering isn't blocked when state changes
   useEffect(() => {
     const fetchTopFive = async () => {
       try {

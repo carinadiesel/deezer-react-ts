@@ -5,6 +5,7 @@ import { alpha, styled } from "@mui/material/styles";
 import { useState } from "react";
 import { useArtistContext } from "../context/ArtistContext.tsx";
 import ArtistCard from "./ArtistCard.tsx";
+import type { ArtistInfo } from "../context/ArtistContext.tsx";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -37,18 +38,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export const SearchDrawerContent = () => {
-  const [artistName, setArtistName] = useState("");
+  const [artistName, setArtistName] = useState<string>("");
   const [resultData, setResultData] = useState([]);
   const { setArtistInfo } = useArtistContext();
 
   const handleSubmit = (event: React.SyntheticEvent) => {
-    event.preventDefault();
-
+    event.preventDefault(); // Not really needed in this case since there is no validation
     setArtistName(artistName);
-    FetchArtists();
+    fetchArtists();
   };
 
-  const FetchArtists = async () => {
+  const fetchArtists = async () => {
     try {
       const response = await fetch(
         `https://api.deezer.com/search/artist?q=${artistName}`
@@ -93,7 +93,7 @@ export const SearchDrawerContent = () => {
           paddingBottom: 7,
         }}
       >
-        {resultData?.map((artist: any, index) => (
+        {resultData?.map((artist: ArtistInfo, index) => (
           <Link
             key={index}
             onClick={() => setArtistInfo(artist)}
