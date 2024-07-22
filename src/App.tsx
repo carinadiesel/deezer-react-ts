@@ -1,6 +1,7 @@
 import { AppBar, Avatar, Box, Drawer, Toolbar } from "@mui/material";
 import "./App.css";
 import hero from "./assets/hero.jpg";
+import logoWhite from "./assets/logo-white.png";
 import ArtistInfo from "./components/ArtistInfo/index.tsx";
 import { SearchDrawerContent } from "./components/SearchDrawerContent";
 import { useArtistContext } from "./context/ArtistContext.tsx";
@@ -24,7 +25,7 @@ function App() {
             justifyContent: "space-between",
           }}
         >
-          <img src="../src/assets/logo-white-horizontal.svg" height={40} />
+          <img src={logoWhite} height={40} />
           <Avatar sx={{ bgcolor: "lightblue" }}>U</Avatar>
         </Toolbar>
       </AppBar>
