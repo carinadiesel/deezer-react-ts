@@ -1,6 +1,10 @@
+// NOT FUNCTIONING/ INCOMPLETE
+
 // import { fireEvent, render } from "@testing-library/react";
 // import { ArtistContextProvider, useArtistContext } from "./ArtistContext";
 // import "@testing-library/jest-dom/extend-expect";
+
+// Setup Mock Component
 
 // const MockComponent = () => {
 //   const { artistInfo, setArtistInfo } = useArtistContext();
@@ -28,6 +32,8 @@
 //   );
 // };
 
+// Before artistInfo is set
+
 // describe("ArtistContextProvider", () => {
 //   it("initializes with null artistInfo", () => {
 //     const { getByTestId } = render(
@@ -39,17 +45,7 @@
 //     expect(getByTestId("artist-name")).toHaveTextContent("No artist");
 //   });
 
-//   it("updates artistInfo correctly", () => {
-//     const { getByText, getByTestId } = render(
-//       <ArtistContextProvider>
-//         <MockComponent />
-//       </ArtistContextProvider>
-//     );
-
-//     fireEvent.click(getByText("Set Artist"));
-
-//     expect(getByTestId("artist-name")).toHaveTextContent("Test Artist");
-//   });
+// Context Provider in wrong spot in component tree
 
 //   it("throws error when used outside of ArtistContextProvider", () => {
 //     const ComponentUsingContext = () => {
