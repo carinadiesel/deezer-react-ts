@@ -1,9 +1,12 @@
 import { AppBar, Avatar, Box, Drawer, Toolbar } from "@mui/material";
 import "./App.css";
 import hero from "./assets/hero.jpg";
+import ArtistInfo from "./components/ArtistInfo/index.tsx";
 import { SearchDrawerContent } from "./components/SearchDrawerContent";
+import { useArtistContext } from "./context/ArtistContext.tsx";
 
 function App() {
+  const { artistInfo } = useArtistContext();
   return (
     <Box sx={{ background: "#000" }}>
       <AppBar
@@ -27,6 +30,7 @@ function App() {
       </AppBar>
       <Box
         sx={{
+          display: "flex",
           height: "100vh",
           width: "100vw",
           backgroundImage: `linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0) 100%),url(${hero})`,
@@ -57,6 +61,18 @@ function App() {
             <SearchDrawerContent />
           </Box>
         </Drawer>
+        {artistInfo && (
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "65vw",
+            }}
+          >
+            <ArtistInfo />
+          </Box>
+        )}
       </Box>
     </Box>
   );
