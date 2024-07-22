@@ -1,18 +1,12 @@
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import { CSSObject, styled } from "@mui/material/styles";
-import {
-  Info,
-  InfoSlotStyles,
-  InfoSubtitle,
-  InfoTitle,
-} from "../../components/ArtistCard.tsx/info-basic";
+import { Info, InfoSlotStyles, InfoSubtitle, InfoTitle } from "./info-basic";
 
 type ArtistCardProps = {
   name: "string";
   fansCount: number;
   imgUrl: string;
-  // clickEventHandler: any;
 };
 
 const useStyles = (): CSSObject & Partial<InfoSlotStyles> => {
@@ -81,8 +75,7 @@ export default function ArtistCard({
   name,
   fansCount,
   imgUrl,
-}: // clickEventHandler,
-ArtistCardProps) {
+}: ArtistCardProps) {
   return (
     <StyledCard>
       <StyledCardMedia image={imgUrl} />

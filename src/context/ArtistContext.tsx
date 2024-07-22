@@ -1,22 +1,12 @@
 import { createContext, useContext, useState } from "react";
 
-// export type ArtistInfo = {
-//   smallImgUrl: string;
-//   bigImgUrl: string;
-//   name: string;
-//   fanCount: number;
-// };
-
-// export type ArtistContextType = {
-//   artistInfo: any;
-//   setArtistInfo: any;
-// };
-
 export type ArtistInfo = {
+  id: number;
   smallImgUrl: string;
-  bigImgUrl: string;
+  picture_xl: string;
   name: string;
-  fanCount: number;
+  nb_fan: number;
+  nb_album: string;
 };
 
 export type ArtistContextType = {
@@ -48,22 +38,3 @@ export const useArtistContext = () => {
   }
   return context;
 };
-
-// export const ArtistContextProvider = ({ children }: Props) => {
-//   const [artistInfo, setArtistInfo] = useState(null);
-//   return (
-//     <ArtistContext.Provider value={{ artistInfo, setArtistInfo }}>
-//       {children}
-//     </ArtistContext.Provider>
-//   );
-// };
-
-// export const useArtistContext = () => {
-//   const context = useContext(ArtistContext);
-//   if (context === null) {
-//     throw new Error(
-//       "useArtistContext must be used within the useArtistContextProvider"
-//     );
-//   }
-//   return context;
-// };
