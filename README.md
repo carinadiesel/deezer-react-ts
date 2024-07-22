@@ -38,7 +38,7 @@ Due to a CORS error,api does can't be reached when running on localhost. In orde
 
 Inspiration, code snippets, etc.
 
-- Image [Unsplash](https://unsplash.com)
+- Image : [Unsplash](https://unsplash.com)
 - [awesome-readme](https://github.com/matiassingers/awesome-readme)
 - [Theme Palette](https://deezerbrand.com/document/37#/-/colour)
 - [MUI Treasury](https://mui-treasury.com/)
