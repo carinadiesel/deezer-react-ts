@@ -7,7 +7,7 @@ export type ArtistInfo = {
   picture_xl: string;
   name: string;
   nb_fan: number;
-  nb_album: string;
+  nb_album: number;
 };
 
 export type ArtistContextType = {
