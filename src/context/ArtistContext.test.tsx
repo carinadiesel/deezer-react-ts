@@ -21,7 +21,7 @@
 //             picture_small: "url1",
 //             picture_medium: "url2",
 //             picture_xl: "url3",
-//             nb_album: "12",
+//             nb_album: 12,
 //             nb_fan: 17,
 //           })
 //         }
