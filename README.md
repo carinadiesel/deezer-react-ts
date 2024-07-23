@@ -32,7 +32,7 @@ npm run preview
 
 ### NOTE
 
-Due to a CORS error,api does can't be reached when running on localhost. In order to develop on localhost,I used the [CORS Unblocked Chrome Extension](https://chromewebstore.google.com/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en)
+To work around CORS Error, I used [CORS Unblocked Chrome Extension](https://chromewebstore.google.com/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en) to view web page both locally and when deployed 
 
 ## Acknowledgments
 
